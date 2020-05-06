@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  srv:
+    build:
+      context: .
+      dockerfile: dns.dockerfile
+      network: host
+#    image: dnsmasq
+    network_mode: host
+#    restart: always
+    volumes:
+      - ./tftp:/tftp
+      - ./dnsmasq.conf:/etc/dnsmasq.conf
+    ports:
+      - 53:53
+      - 67:67
