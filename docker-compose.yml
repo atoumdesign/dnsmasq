@@ -1,13 +1,13 @@
 version: "3.7"
 services:
   srv:
-    build:
-      context: .
-      dockerfile: dns.dockerfile
-      network: host
-#    image: dnsmasq
+#    build:
+#      context: .
+#      dockerfile: dns.dockerfile
+#      network: host
+    image: atoumdesign\dnsmasq
     network_mode: host
-#    restart: always
+    restart: always
     volumes:
       - ./tftp:/tftp
       - ./dnsmasq.conf:/etc/dnsmasq.conf
